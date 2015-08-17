@@ -10,6 +10,8 @@ DEFAULT_PORTIA_PORT = 9001
 DEFAULT_PORTIA_ROOT = './dist'
 splash.defaults.SPLASH_PORT = DEFAULT_PORTIA_PORT
 
+sys.path.append("/Users/lam/Devel/personal/portia/slyd")
+
 
 def make_server(*args, **kwargs):
     from slyd.tap import makeService
@@ -23,7 +25,7 @@ def make_server(*args, **kwargs):
 def add_args():
     op = argparse.ArgumentParser()
     op.add_argument('-p', '--port', default=DEFAULT_PORTIA_PORT, type=int)
-    op.add_argument('-r', '--root', default=DEFAULT_PORTIA_PORT,
+    op.add_argument('-r', '--root', default=DEFAULT_PORTIA_ROOT,
                     dest='proxy_portnum',
                     help='Location of Portia webserver assets')
     # XXX: Consume portia specific arguments
