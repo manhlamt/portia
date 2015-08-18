@@ -11,7 +11,7 @@ var defaultUrl = function() {
     if (!/wss?/.test(uri.protocol)) {
         uri.protocol = uri.protocol === 'https' ? 'wss' : 'ws';
     }
-    uri.path += '/ws';
+    uri.path = '/ws';
     return URI.build(uri);
 };
 

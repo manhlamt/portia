@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'portia-web',
     environment: environment,
-    baseURL: '/scrappee/',
+    baseURL: '/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -38,7 +38,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.SLYD_URL='http://dg-test.knorex.asia/scrappee'
+    ENV.SLYD_URL='http://dg-test.knorex.asia/scrappee';
+    ENV.baseURL= '/scrappee/';
   }
 
   return ENV;

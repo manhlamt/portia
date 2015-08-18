@@ -64,7 +64,7 @@ function treeMirrorDelegate(){
                 $(node).on('submit', ()=>false);
             } else if (tagName === 'IFRAME' || tagName === 'FRAME') {
                 node = document.createElement(tagName);
-                node.setAttribute('src', '/static/frames-not-supported.html');
+                node.setAttribute('src', 'static/frames-not-supported.html');
             } else if (tagName === 'CANVAS') {
                 node = document.createElement(tagName);
                 paintCanvasMessage(node);
@@ -208,7 +208,7 @@ export default WebDocument.extend({
         var id = utils.shortGuid();
         // Using a empty static page because using srcdoc or an data:uri gives
         // permission problems and/or broken baseURI behaviour in different browsers.
-        iframe.setAttribute('src', '/static/empty-frame.html?' + id);
+        iframe.setAttribute('src', 'static/empty-frame.html?' + id);
         iframe.removeAttribute('srcdoc');
         // Using a message to workaround onload bug on some browsers (cough IE cough).
         var $win = $(window).bind('message', function onMessage(e){
