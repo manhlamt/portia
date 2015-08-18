@@ -10,7 +10,7 @@ DEFAULT_PORTIA_PORT = 9001
 DEFAULT_PORTIA_ROOT = './dist'
 splash.defaults.SPLASH_PORT = DEFAULT_PORTIA_PORT
 
-sys.path.append("/Users/lam/Devel/personal/portia/slyd")
+# sys.path.append("/Users/lam/Devel/personal/portia/slyd")
 
 
 def make_server(*args, **kwargs):
