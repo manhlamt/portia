@@ -263,6 +263,9 @@ class FerryServerProtocol(WebSocketServerProtocol):
     def populate_window_object(self):
         self.tab.web_page.mainFrame().addToJavaScriptWindowObject(
             '__portiaApi', self.js_api)
+        print os.path.join(self.assets, 'splash_content_scripts')
+        for jsfile in os.listdir(os.path.join(self.assets, 'splash_content_scripts')):
+            print jsfile
         self.tab.run_js_files(
             os.path.join(self.assets, 'splash_content_scripts'),
             handle_errors=False)
