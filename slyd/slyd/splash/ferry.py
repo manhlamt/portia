@@ -136,6 +136,10 @@ class PortiaJSApi(QObject):
         if command == 'mutation':
             self.protocol.sendMessage(metadata(self.protocol))
 
+    @pyqtSlot('QString')
+    def log(self, message):
+        print message
+
 
 class FerryServerProtocol(WebSocketServerProtocol):
 
@@ -188,6 +192,9 @@ class FerryServerProtocol(WebSocketServerProtocol):
         data = json.loads(payload)
         if '_command' in data and data['_command'] in self._handlers:
             command = data['_command']
+            if command == 'load':
+                self._handlers['close_tab'](data, self)
+                print 'Close the fucking current tab'
             try:
                 result = self._handlers[command](data, self)
             except BaseHTTPError as e:

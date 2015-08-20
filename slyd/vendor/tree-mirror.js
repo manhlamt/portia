@@ -170,7 +170,8 @@ var TreeMirrorClient = (function () {
             children.push(this.serializeNode(child, true));
 
         this.mirror.initialize(rootId, children, target.baseURI);
-
+        __portiaApi.sendMessage('debug', [target, children]);
+        __portiaApi.log(target);
         var self = this;
 
         var queries = [{ all: true }];
