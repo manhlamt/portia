@@ -192,8 +192,8 @@ class FerryServerProtocol(WebSocketServerProtocol):
         data = json.loads(payload)
         if '_command' in data and data['_command'] in self._handlers:
             command = data['_command']
-            if command == 'load':
-                self._handlers['close_tab'](data, self)
+            # if command == 'load':
+            #     self._handlers['close_tab'](data, self)
 
             try:
                 result = self._handlers[command](data, self)
