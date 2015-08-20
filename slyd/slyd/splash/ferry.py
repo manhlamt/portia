@@ -194,7 +194,7 @@ class FerryServerProtocol(WebSocketServerProtocol):
             command = data['_command']
             if command == 'load':
                 self._handlers['close_tab'](data, self)
-                print 'Close the fucking current tab'
+
             try:
                 result = self._handlers[command](data, self)
             except BaseHTTPError as e:

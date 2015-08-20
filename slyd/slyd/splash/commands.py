@@ -131,6 +131,7 @@ def resize(data, socket):
 def close_tab(data, socket):
     """Close virtual tab if it is open"""
     if socket.tab is not None:
+        print 'Close the fucking current tab'
         socket.tab.close()
         socket.factory[socket].tab = None
 
