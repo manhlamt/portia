@@ -22,7 +22,7 @@ def wrap_url(url, tabid, base=None):
     if parsed.scheme not in ('http', 'https', 'ftp'):
         return 'data:text/plain,invalid_scheme'
 
-    return "/scrappee/proxy?" + urllib.urlencode({
+    return "/proxy?" + urllib.urlencode({
         "url": url,
         "referer": referer,
         "tabid": tabid

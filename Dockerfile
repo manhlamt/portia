@@ -12,9 +12,9 @@ RUN /splash.sh
 
 # Install python stuff.
 ADD slyd/requirements.txt /requirements-slyd.txt
-RUN pip install -r /requirements-slyd.txt
+RUN pip install --no-cache-dir -r /requirements-slyd.txt
 ADD slybot/requirements.txt /requirements-slybot.txt
-RUN pip install -r/requirements-slybot.txt
+RUN pip install --no-cache-dir -r /requirements-slybot.txt
 
 ENV PYTHONPATH /app/slybot:/app/slyd
 EXPOSE 9001
